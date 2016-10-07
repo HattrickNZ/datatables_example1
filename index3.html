@@ -68,7 +68,12 @@ $(document).ready(function() {
         { "mData": "Name" },
         { "mData": "Position" },
         { "mData": "Office" },
-        { "mData": "Extn" }, //Extn. had to be changed to Extn in the 
+        { "mData": "Extn", //Extn. had to be changed to Extn in the 
+			render: $.fn.dataTable.render.number(',', '.', 0, '') //option 1 - built-in helper, to get a thousand seperator (5,407):
+			/*render: function (data, type, row) { //option2 - custom function (54.07)
+								return data / 100; 
+					}*/
+		}, 
 		{ "mData": "Start date" },
 		{ "mData": "Salary" }
     ]
